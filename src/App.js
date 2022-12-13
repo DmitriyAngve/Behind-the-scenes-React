@@ -60,3 +60,8 @@ export default App;
 // show={false} is a boolean
 // [1,2,3] === [1,2,3] false
 // functions is just objects
+
+// ------------------------NOTES-----------------------
+// If I create functions in the function an d the pass those functions through props to our components, I will indeed get a new function object and even React.memo will them not be able to help you because objects are references values and comparing them with equal signs, which is what React.memo does under the hood, will not work for primitive values, you will therefore not have that problem. Use useCallback() for solve this problem -> with that I can tell React that it should store a function and not recreate it when the surrounding function runs again, as long as certain dependecies didn't change
+
+// ------------------------NOTES-----------------------
