@@ -17,3 +17,5 @@ const Button = (props) => {
 };
 
 export default React.memo(Button);
+
+// props.onClick === props.previous.onClick false -> React.memo finds out that the value changed

@@ -40,3 +40,5 @@ export default App;
 // it works like a simple JS function
 // because "hi" === "hi" -> true, false === false -> true
 // show={false} is a boolean
+// [1,2,3] === [1,2,3] false
+// functions is just objects
