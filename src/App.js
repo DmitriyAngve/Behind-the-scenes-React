@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./components/UI/Button/Button";
+import DemoOutput from "./components/Demo/DemoOutput";
 
 import "./App.css";
 
@@ -13,10 +14,19 @@ function App() {
     setShowParagraph((prevShowParagraph) => !prevShowParagraph);
   };
 
+  // ~ Child Component re-evaluation ~
+  // STEP: 2
+  // 2.1 In App Component add <DemoOutput />
+  // 2.2 Set the show prop cuz I use that show prop in DemoOutput "show={showParagraph}"
+  // 2.3 {showParagraph} - beacuse that is a boolean, it is false initialy and it's changed to true if we click the button and then back to false ends on
+  // ~ Child Component re-evaluation ~
+
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {showParagraph && <p>This is new!</p>}
+      <DemoOutput show={false} />
+      {/* <DemoOutput show={showParagraph} /> */}
+      {/* {showParagraph && <p>This is new!</p>} */}
       <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
     </div>
   );
@@ -25,3 +35,8 @@ function App() {
 export default App;
 
 //{showParagraph && <p>This is new!</p>} - element conditionally. Initially not shown - useState!
+
+// props.show === props.previous.show - that React.memo does
+// it works like a simple JS function
+// because "hi" === "hi" -> true, false === false -> true
+// show={false} is a boolean
