@@ -19,3 +19,4 @@ const Button = (props) => {
 export default React.memo(Button);
 
 // props.onClick === props.previous.onClick false -> React.memo finds out that the value changed
+// We can make React.memo works for prop values that are objects as well, just need to tweak the way we create and store those objects a little bit -> useCallback
